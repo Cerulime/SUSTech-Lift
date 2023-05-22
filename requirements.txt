@@ -1,0 +1,7 @@
+paddlepaddle
+paddleocr
+tqdm
+opencv-python
+matplotlib
+scipy
+numpy
