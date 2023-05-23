@@ -66,7 +66,7 @@ if __name__=="__main__":
 	if args.detail==True:
 		low=np.percentile(y,2)
 		high=np.percentile(y,98)
-		mid=np.percentile(y,50)
+		mid=np.median(y)
 		print("low 2% of all: "+str(low))
 		print("high 2% of all: "+str(high))
 		print("middle: "+str(mid))
@@ -79,7 +79,7 @@ if __name__=="__main__":
 	y=scipy.signal.savgol_filter(y,53,3)
 	v=cal_integral(x,y)
 	d=cal_integral(x,v)
-	print("Height: "+str(np.ptp(d)))
+	print("Height: "+str(np.sign(d[-1]-d[0]))+"*"+str(np.ptp(d)))
 	if args.figure==False:
 		sys.exit(0)
 	plt.figure(1)
